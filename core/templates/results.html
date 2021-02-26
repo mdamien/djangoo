@@ -38,15 +38,17 @@
 <body>
     <br>
     <div>
+        <form method="get" action="/search">
         &nbsp;&nbsp;<img style="margin-top:-10px" src="/static/logo.png" height="40" />
-        &nbsp;&nbsp;<input name="test" type="text" value="{{ query }}"/>
+        &nbsp;&nbsp;<input name="q" type="text" value="{{ query }}"/>
+        </form>
     </div>
     <hr/>
     <div style="margin-left: 145px; width: 600px">
         {% for webpage in results %}
-        <a class="result" href="#">
-            <small>{{ webpage.url }}</small>
-            <h3>{{ webpage.title }}</h3>
+        <a class="result" href="{{ webpage.webpage.url }}">
+            <small>{{ webpage.webpage.url }}</small>
+            <h3>{{ webpage.webpage.title }} ({{ webpage.count }})</h3>
         </a>
         <br/>
         {% endfor %}

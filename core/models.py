@@ -10,9 +10,8 @@ class Webpage(models.Model):
         soup = BeautifulSoup(self.html, 'lxml')
         return soup.title.text
 
-"""
+
 class WebpageTokenCount(models.Model):
-    webpage = models.ForeignKey(Webpage)
+    webpage = models.ForeignKey(Webpage, on_delete=models.DO_NOTHING)
     token = models.TextField()
     count = models.IntegerField()
-"""
