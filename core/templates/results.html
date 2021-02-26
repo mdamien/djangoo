@@ -43,20 +43,13 @@
     </div>
     <hr/>
     <div style="margin-left: 145px; width: 600px">
+        {% for webpage in results %}
         <a class="result" href="#">
-            <small>en.wikipedia.org › wiki › Capitals_o...</small>
-            <h3>Capitals of Brazil - Wikipedia</h3>
-            <p>
-                The current capital of Brazil, since its construction in 1960, is Brasília. Rio de Janeiro was the ... Tools. What links here · Related changes · Upload file · Special pages · Permanent link · Page information · Cite this page · Wikidata item ...
-            </p>
+            <small>{{ webpage.url }}</small>
+            <h3>{{ webpage.title }}</h3>
         </a>
         <br/>
-        <a class="result" href="#">
-            <small>simple.wikipedia.org › wiki › Capita...</small>
-            <h3>Capital of Brazil - Simple English Wikipedia, the free ...</h3>
-            <p>The capital of Brazil is Brasília, a planned city that was built to be the capital of the country. Before that, Brazil had two other capital cities: Salvador (1549–1763) and Rio de Janeiro (1763–1960).
-            </p>
-        </a>
+        {% endfor %}
     </div>
 </body>
 </html>
