@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Webpage(models.Model):
+    url = models.URLField(unique=True)
+    html = models.TextField()
+    pagerank = models.FloatField()

@@ -6,4 +6,7 @@ def index(request):
 
 
 def results(request):
-    return render(request, 'results.html')
+    results = Webpage.objects.all().order_by('-pagerank').limit(10)
+    return render(request, 'results.html', {
+        'query': request.GET['q'],
+    })
